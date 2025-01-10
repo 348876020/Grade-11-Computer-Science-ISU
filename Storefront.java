@@ -60,10 +60,9 @@ public class Storefront {
                     System.out.println("Please enter a correct option: Admin Menu, User Shopping, or Exit.");
                 }
             }
-            String add = ""; // universal holding variable
             while (menureset) {
                 boolean CategoryError = true; //Defining error variable for checking if user states a correct product category.
-                String category = ""; //Universal holding variable
+                String category = "";//Universal holding variable
                 while (CategoryError) { // A loop to verify if the user queries a correct product category.
                     System.out.println("Choose a product category.");
                     System.out.println("Electronics\nClothing\nFurniture\nBooks");
@@ -108,7 +107,7 @@ public class Storefront {
                     }
 
                     System.out.println("Enter item for purchase: (Type \"checkout\" to continue to checkout. Type \"Menu\" to go back)");
-                    add = sc.nextLine().toLowerCase();
+                    String add = sc.nextLine().toLowerCase(); // universal holding variable
                     if (add.equals("menu")) {
                         System.out.println("returning to menu.");
                         break;
@@ -116,7 +115,7 @@ public class Storefront {
                         switch (add) {
                             case "4k samsung television" -> {
                                 System.out.println("How many 4K Samsung Televisions?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[0] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -128,7 +127,7 @@ public class Storefront {
                             }
                             case "iphone 16" -> {
                                 System.out.println("How many Iphone 16s?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[1] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -140,7 +139,7 @@ public class Storefront {
                             }
                             case "dyson vacuum" -> {
                                 System.out.println("How many Dyson Vacuums?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[2] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -152,7 +151,7 @@ public class Storefront {
                             }
                             case "nike t-shirt" -> {
                                 System.out.println("How many Nike T-Shirts?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[3] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -164,7 +163,7 @@ public class Storefront {
                             }
                             case "adidas sweater" -> {
                                 System.out.println("How many Adidas Sweaters?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[4] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -176,7 +175,7 @@ public class Storefront {
                             }
                             case "puma sweatpants" -> {
                                 System.out.println("How many Puma Sweatpants?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[5] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -188,7 +187,7 @@ public class Storefront {
                             }
                             case "long couch" -> {
                                 System.out.println("How many long couches?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[6] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -200,7 +199,7 @@ public class Storefront {
                             }
                             case "dining set" -> {
                                 System.out.println("How many Dining sets?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[7] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -212,7 +211,7 @@ public class Storefront {
                             }
                             case "cushioned chair" -> {
                                 System.out.println("How many Cushioned Chairs?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[8] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -224,7 +223,7 @@ public class Storefront {
                             }
                             case "harry potter series" -> {
                                 System.out.println("How many harry potter series?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[9] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -236,7 +235,7 @@ public class Storefront {
                             }
                             case "hunger games" -> {
                                 System.out.println("How many Hunger Games books?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[10] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -248,7 +247,7 @@ public class Storefront {
                             }
                             case "lord of the rings" -> {
                                 System.out.println("How many Lord of the Rings books?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[11] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -260,7 +259,7 @@ public class Storefront {
                             }
                             case "dune" -> {
                                 System.out.println("How many Dune books?");
-                                int amount = sc.nextInt();
+                                int amount = Integer.parseInt(sc.nextLine());
                                 if (stocks[12] - amount < 0)
                                     System.out.println("Sorry, this product is sold out in that quantity. Please try again.");
                                 else {
@@ -359,4 +358,3 @@ public class Storefront {
         sc.close();
     }
 }
-
