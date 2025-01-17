@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.*;
 public class Storefront {
     public static void main(String[] args) {
@@ -10,10 +9,10 @@ public class Storefront {
         ArrayList<String> cart = new ArrayList<>(); // Cart, add items
         boolean programloop = true;
         while (programloop) {
-            boolean intialchoiceloop = true;
+            boolean initialchoiceloop = true;
             boolean passwordloop = true;
             boolean menureset = true; // for the cart
-            while (intialchoiceloop) {
+            while (initialchoiceloop) {
                 System.out.println("Welcome to TerrandiMart!");
                 System.out.println("Admin Menu or User Shopping - Type exit to quit.");
                 String adminoruser = sc.nextLine().toLowerCase();
@@ -28,11 +27,11 @@ public class Storefront {
                             boolean adminloop = true;
                             while (adminloop) {
                                 System.out.println("Choose an admin action. Type exit to exit this menu.\n 1. submit Order");
-                                String adminaction = sc.nextLine();
+                                String adminaction = sc.nextLine().toLowerCase();
                                 if (adminaction.equals("exit")) {
                                     adminloop = false;
                                     passwordloop = false;
-                                } else {
+                                } else if(adminaction.equals("submit order")){
                                     System.out.println("Orders:");
                                     System.out.println("cart: " + cart);
                                     System.out.println("Type name of order to submit");
@@ -43,9 +42,13 @@ public class Storefront {
                                             cart.remove(0);
                                         }
                                         sum = 0;
-                                    }
-                                }
+                                    } else {
+                                        System.out.println("That is an invalid order to fulfill.");
 
+                                    }
+                                } else {
+                                    System.out.println("Please enter a valid admin action!");
+                                }
                             }
                         } else {
                             System.out.println("Incorrect. Please re-enter the password.");
@@ -53,14 +56,14 @@ public class Storefront {
                     }
 
                 } else if (adminoruser.equals("user shopping")) {
-                    intialchoiceloop = false;
+                    initialchoiceloop = false;
                 } else if(adminoruser.equals("exit")) {
-                    intialchoiceloop = false;
+                    initialchoiceloop = false;
                     programloop = false;
                     menureset = false;
                 } else {
                     System.out.println("Please enter a correct option: Admin Menu, User Shopping, or Exit.");
-                }
+                }   
             }
             while (menureset) {
                 boolean CategoryError = true; //Defining error variable for checking if user states a correct product category.
